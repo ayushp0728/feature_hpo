@@ -1,18 +1,21 @@
-"""
-File to describe tunable hyperparameters for ROSE.
+import random
 
-Allows me to validate different inputs for research. 
-"""
-class SearchSpace: 
 
-    def __init__(self, space):
+class SearchSpace:
+    """
+    Defines hyperparameter ranges and sampling logic.
+    """
+
+    def __init__(self, space: dict):
         self.space = space
-        self.validate_space()
 
-    def validate_space(self):
-        for k,v in self.space.items():
-            if not isinstance(v, list) or len(v) == 0:
-                raise ValueError(f"Hyperparameter {k} must be a non-empty list of values.")
-    
-    def items(self):
-        return self.space.items()
+    def sample(self) -> dict:
+        config = {}
+        for name, spec in self.space.items():
+            if spec["type"] == "uniform":
+                config[name] = random.uniform(*spec["bounds"])
+            elif spec["type"] == "choice":
+                config[name] = random.choice(spec["values"])
+            else:
+                raise ValueError(f"Unknown spec type for {name}")
+        return config
