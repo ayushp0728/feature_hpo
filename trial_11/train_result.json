@@ -1,0 +1,1 @@
+{"accuracy": 0.8833333333333333, "f1_score": 0.8819811634283893, "n_labeled": 195, "n_estimators": 200, "max_depth": 10, "min_samples_split": 2, "min_samples_leaf": 2}
