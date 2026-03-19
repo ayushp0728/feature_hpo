@@ -10,28 +10,28 @@ ROSE uses RADICAL-Cybertools -- middleware building blocks to facilitate the dev
 
 ---
 
-## 🎯 What's New in This Branch: HPO Module
+## What's New in This Branch: HPO Module
 
 This feature branch adds **distributed hyperparameter optimization (HPO)** capabilities to ROSE, enabling automated tuning of ML model hyperparameters through parallel trial execution.
 
 ### New Features
 
-✨ **Hyperparameter Optimization Framework**
+ **Hyperparameter Optimization Framework**
 - Automatically optimize ML model hyperparameters without manual trial-and-error
 - Reduce experiment time from hours to minutes through parallel execution
 - Support for multiple search strategies (Grid, Random, Bayesian)
 
-🔧 **Learner-Agnostic Orchestration**
+ **Learner-Agnostic Orchestration**
 - Works seamlessly with existing `ParallelActiveLearner` workflows
 - Future support for `ParallelReinforcementLearner`
 - No changes required to existing ROSE code
 
-⚡ **Parallel Trial Execution**
+ **Parallel Trial Execution**
 - Run 4-12+ hyperparameter configurations simultaneously
 - Automatic workspace isolation prevents file conflicts
 - Fault-tolerant execution with 95%+ trial completion rate
 
-📊 **Built-in Result Analysis**
+ **Built-in Result Analysis**
 - Automatic metric extraction and ranking
 - Top-k configuration identification
 - Statistical analysis across all trials
@@ -252,11 +252,11 @@ rose/
 ### Unchanged ROSE Components
 
 All existing ROSE functionality remains intact:
-- ✅ `SequentialActiveLearner`
-- ✅ `ParallelActiveLearner`
-- ✅ `SequentialReinforcementLearner`
-- ✅ `ParallelReinforcementLearner`
-- ✅ All existing examples and tutorials
+- `SequentialActiveLearner`
+- `ParallelActiveLearner`
+- `SequentialReinforcementLearner`
+- `ParallelReinforcementLearner`
+- All existing examples and tutorials
 
 ---
 
